@@ -16,7 +16,7 @@ const UserListScreen = () => {
   const [deleteUser] = useDeleteUserMutation();
 
   const deleteHandler = async (id) => {
-    if (window.confirm('Are you sure')) {
+    if (window.confirm('Esta seguro?')) {
       try {
         await deleteUser(id);
         refetch();
@@ -28,7 +28,7 @@ const UserListScreen = () => {
 
   return (
     <>
-      <h1>Users</h1>
+      <h1>Usuarios</h1>
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -39,8 +39,8 @@ const UserListScreen = () => {
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>NAME</th>
+              <th>ID Usuario</th>
+              <th>NOMBRE</th>
               <th>EMAIL</th>
               <th>ADMIN</th>
               <th></th>

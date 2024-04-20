@@ -33,8 +33,8 @@ const Header = () => {
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-              <img src={logo} alt='ProShop' />
-              ProShop
+              <img src='' alt='' />
+             IphoneXtreme
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -43,7 +43,7 @@ const Header = () => {
               <SearchBox />
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <FaShoppingCart /> Cart
+                  <FaShoppingCart /> Carrito
                   {cartItems.length > 0 && (
                     <Badge pill bg='success' style={{ marginLeft: '5px' }}>
                       {cartItems.reduce((a, c) => a + c.qty, 0)}
@@ -55,17 +55,17 @@ const Header = () => {
                 <>
                   <NavDropdown title={userInfo.name} id='username'>
                     <LinkContainer to='/profile'>
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
+                      <NavDropdown.Item>Perfil</NavDropdown.Item>
                     </LinkContainer>
                     <NavDropdown.Item onClick={logoutHandler}>
-                      Logout
+                      Salir
                     </NavDropdown.Item>
                   </NavDropdown>
                 </>
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <FaUser /> Sign In
+                    <FaUser /> Entrar
                   </Nav.Link>
                 </LinkContainer>
               )}
@@ -74,13 +74,13 @@ const Header = () => {
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>
                   <LinkContainer to='/admin/productlist'>
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item>Productos</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item>Ordenes</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to='/admin/userlist'>
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                    <NavDropdown.Item>Usuarios</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}

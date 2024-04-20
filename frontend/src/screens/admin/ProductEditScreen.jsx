@@ -50,7 +50,7 @@ const ProductEditScreen = () => {
         description,
         countInStock,
       });
-      toast.success('Product updated');
+      toast.success('Producto actualizado');
       refetch();
       navigate('/admin/productlist');
     } catch (err) {
@@ -85,10 +85,10 @@ const ProductEditScreen = () => {
   return (
     <>
       <Link to='/admin/productlist' className='btn btn-light my-3'>
-        Go Back
+       Volver
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>Editar Producto</h1>
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -97,35 +97,35 @@ const ProductEditScreen = () => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Enter name'
+                placeholder='Nombre'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='price'>
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Precio</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter price'
+                placeholder='precio'
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='image'>
-              <Form.Label>Image</Form.Label>
+              <Form.Label>Imagen</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter image url'
+                placeholder='ingrese imagen url'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
               <Form.Control
-                label='Choose File'
+                label='Subir imagen'
                 onChange={uploadFileHandler}
                 type='file'
               ></Form.Control>
@@ -133,40 +133,40 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId='brand'>
-              <Form.Label>Brand</Form.Label>
+              <Form.Label>Marca</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter brand'
+                placeholder='Marca'
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>Cantidad disponible</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter countInStock'
+                placeholder='ingrese cantidad'
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='category'>
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Categoria</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter category'
+                placeholder='Categoria'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='description'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Descripción</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter description'
+                placeholder='ingrese una descripción'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
@@ -177,7 +177,7 @@ const ProductEditScreen = () => {
               variant='primary'
               style={{ marginTop: '1rem' }}
             >
-              Update
+              Actualizar
             </Button>
           </Form>
         )}

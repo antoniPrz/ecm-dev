@@ -68,7 +68,7 @@ const ProductScreen = () => {
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
-        Go Back
+        Volver
       </Link>
       {isLoading ? (
         <Loader />
@@ -94,9 +94,9 @@ const ProductScreen = () => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Precio: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  Descripción: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -105,7 +105,7 @@ const ProductScreen = () => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>Precio:</Col>
                       <Col>
                         <strong>${product.price}</strong>
                       </Col>
@@ -113,9 +113,9 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Status:</Col>
+                      <Col>Estado:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                        {product.countInStock > 0 ? 'Disponible' : 'Agotado'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -124,7 +124,7 @@ const ProductScreen = () => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>Cantidad</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -151,7 +151,7 @@ const ProductScreen = () => {
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
                     >
-                      Add To Cart
+                      Agregar
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -160,8 +160,8 @@ const ProductScreen = () => {
           </Row>
           <Row className='review'>
             <Col md={6}>
-              <h2>Reviews</h2>
-              {product.reviews.length === 0 && <Message>No Reviews</Message>}
+              <h2>Reseñas</h2>
+              {product.reviews.length === 0 && <Message>Sin reseñas</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
@@ -172,14 +172,14 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2>Write a Customer Review</h2>
+                  <h2>Deje su reseña</h2>
 
                   {loadingProductReview && <Loader />}
 
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group className='my-2' controlId='rating'>
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label>Calificar</Form.Label>
                         <Form.Control
                           as='select'
                           required
@@ -195,7 +195,7 @@ const ProductScreen = () => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group className='my-2' controlId='comment'>
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>Commentario</Form.Label>
                         <Form.Control
                           as='textarea'
                           row='3'
@@ -209,12 +209,12 @@ const ProductScreen = () => {
                         type='submit'
                         variant='primary'
                       >
-                        Submit
+                        Enviar
                       </Button>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review
+                      Por favor <Link to='/login'>ingrese </Link> paradejar su reseña
                     </Message>
                   )}
                 </ListGroup.Item>
