@@ -53,57 +53,57 @@ const ProfileScreen = () => {
   return (
     <Row>
       <Col md={3}>
-        <h2>User Profile</h2>
+        <h2>Perfil</h2>
 
         <Form onSubmit={submitHandler}>
           <Form.Group className='my-2' controlId='name'>
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Nombre</Form.Label>
             <Form.Control
               type='name'
-              placeholder='Enter name'
+              placeholder='ingrese su nombre'
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group className='my-2' controlId='email'>
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label>Email</Form.Label>
             <Form.Control
               type='email'
-              placeholder='Enter email'
+              placeholder='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group className='my-2' controlId='password'>
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Contraseña</Form.Label>
             <Form.Control
               type='password'
-              placeholder='Enter password'
+              placeholder='contraseña'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group className='my-2' controlId='confirmPassword'>
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label>Confirmar Contraseña</Form.Label>
             <Form.Control
               type='password'
-              placeholder='Confirm password'
+              placeholder='confirmar contraseña'
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Button type='submit' variant='primary'>
-            Update
+            Actualizar datos
           </Button>
           {loadingUpdateProfile && <Loader />}
         </Form>
       </Col>
       <Col md={9}>
-        <h2>My Orders</h2>
+        <h2>Mis ordenes</h2>
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -114,11 +114,11 @@ const ProfileScreen = () => {
           <Table striped table hover responsive className='table-sm'>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>DATE</th>
+                <th>NUMERO DE ORDEN</th>
+                <th>FECHA</th>
                 <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
+                <th>PAGADA</th>
+                <th>ENVIADA</th>
                 <th></th>
               </tr>
             </thead>
@@ -145,7 +145,7 @@ const ProfileScreen = () => {
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
                       <Button className='btn-sm' variant='light'>
-                        Details
+                        Detalle
                       </Button>
                     </LinkContainer>
                   </td>

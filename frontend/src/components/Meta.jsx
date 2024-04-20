@@ -11,8 +11,8 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To ProShop',
-  description: 'We sell the best products for cheap',
+  title: 'IphoneXtreme Tienda',
+  description: 'Venta de electronicos de la marca Apple',
   keywords: 'electronics, buy electronics, cheap electroincs',
 };
 
